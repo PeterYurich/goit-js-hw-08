@@ -1,1 +1,0 @@
-{"mappings":"AACeA,SAASC,cAAc,iBACvBC,MAAMC","sources":["src/js/02-video.js"],"sourcesContent":["\nconst iframe = document.querySelector(\"#vimeo-player\");\nconst player = Vimeo.Player()"],"names":["document","querySelector","Vimeo","Player"],"version":3,"file":"02-video.947b99e1.js.map"}
