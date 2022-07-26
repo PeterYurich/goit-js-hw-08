@@ -7,9 +7,9 @@ const feedback = {
 }
 
 // find objects:
-const emailInputEl = document.querySelector('[name="email"]');
-const messageInputEl = document.querySelector('[name="message"]');
-const submitBtnEl = document.querySelector('[type="submit"]');
+const emailInputEl = document.querySelector('[name="email"]')
+const messageInputEl = document.querySelector('[name="message"]')
+const submitBtnEl = document.querySelector('[type="submit"]')
 
 // set entered values:
 emailInputEl.value = JSON.parse(localStorage.getItem("feedback-form-state")).email

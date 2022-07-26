@@ -9,7 +9,7 @@ const player = new Player(iframe);
 player.setCurrentTime(localStorage.getItem("videoplayer-current-time"))
 
 const onPlay = function(data) {
-    const time = data.seconds
+    const time = data.seconds;
     localStorage.setItem("videoplayer-current-time", time);
 };
 
