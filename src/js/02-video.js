@@ -1,5 +1,5 @@
 
-// const iframe = document.querySelector("#vimeo-player");
-// const player = Vimeo.Player()
+const iframe  = document.querySelector("#vimeo-player");
+const player = new Vimeo.Player(iframe);
 
-console.log("asdf");
+console.log(player)
