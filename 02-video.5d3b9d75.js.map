@@ -1,1 +1,0 @@
-{"mappings":"AAIAA,QAAQC,IAAI","sources":["src/js/02-video.js"],"sourcesContent":["\n// const iframe = document.querySelector(\"#vimeo-player\");\n// const player = Vimeo.Player()\n\nconsole.log(\"qwe\");\n"],"names":["console","log"],"version":3,"file":"02-video.5d3b9d75.js.map"}
