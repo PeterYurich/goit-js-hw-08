@@ -1,8 +1,8 @@
 
 import { _ } from "lodash"
 
-const form = document.querySelector('.feedback-form')
 lOCALSTORAGE_KEY = 'feedback-form-state'
+const form = document.querySelector('.feedback-form')
 
 function getEnteredData () {
     return JSON.parse(localStorage.getItem(lOCALSTORAGE_KEY)) 
@@ -22,7 +22,7 @@ const onTapping = (e) => {
     enteredData[e.target.name] = e.target.value
     localStorage.setItem(lOCALSTORAGE_KEY, JSON.stringify(enteredData))
 }
-form.addEventListener('input', _.throttle(onTapping, 1))
+form.addEventListener('input', _.throttle(onTapping, 500))
 
 form.addEventListener('submit', e => {
     e.preventDefault();
