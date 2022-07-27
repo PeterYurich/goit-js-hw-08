@@ -4,7 +4,6 @@ import { _ } from "lodash"
 const form = document.querySelector('.feedback-form')
 
 const enteredData = JSON.parse(localStorage.getItem("feedback-form-state"))
-
 if (enteredData) {
     Object.entries(enteredData).forEach(([name, value]) => {
         form.elements[name].value = value
@@ -12,8 +11,9 @@ if (enteredData) {
 }
 
 const onTapping = (e) => {
-    let enteredData = localStorage.getItem("feedback-form-state")
-    enteredData = enteredData ? JSON.parse(enteredData) : {}
+    let enteredData = JSON.parse(localStorage.getItem("feedback-form-state"))
+    console.log(enteredData)
+    enteredData = enteredData ? enteredData : {}
     enteredData[e.target.name] = e.target.value
     localStorage.setItem("feedback-form-state", JSON.stringify(enteredData))
 }
@@ -30,3 +30,4 @@ form.addEventListener('submit', e => {
         localStorage.removeItem("feedback-form-state")
     } else { console.log("object 'feedback-form-state' in storage is already removed") }
 })
+
