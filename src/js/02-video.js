@@ -5,8 +5,11 @@ import _ from 'lodash';
 const iframe  = document.querySelector("#vimeo-player");
 const player = new Player(iframe);
 
+const savedTime = localStorage.getItem("videoplayer-current-time")
 
-player.setCurrentTime(localStorage.getItem("videoplayer-current-time"))
+if (savedTime !== null)  {
+    player.setCurrentTime(localStorage.getItem("videoplayer-current-time"))
+} 
 
 const onPlay = function(data) {
     const time = data.seconds;
