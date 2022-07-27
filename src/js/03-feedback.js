@@ -3,7 +3,11 @@ import { _ } from "lodash"
 
 const form = document.querySelector('.feedback-form')
 
-const enteredData = JSON.parse(localStorage.getItem("feedback-form-state"))
+function getEnteredData () {
+    return JSON.parse(localStorage.getItem("feedback-form-state")) 
+}
+const enteredData = getEnteredData()
+// тут вызов функции работает (правда это единственный случай, где он работает)
 if (enteredData) {
     Object.entries(enteredData).forEach(([name, value]) => {
         form.elements[name].value = value
@@ -12,6 +16,7 @@ if (enteredData) {
 
 const onTapping = (e) => {
     let enteredData = JSON.parse(localStorage.getItem("feedback-form-state"))
+    // а тут вызов функции  getEnteredData не работает
     console.log(enteredData)
     enteredData = enteredData ? enteredData : {}
     enteredData[e.target.name] = e.target.value
@@ -22,6 +27,7 @@ form.addEventListener('input', _.throttle(onTapping, 1))
 form.addEventListener('submit', e => {
     e.preventDefault();
     const enteredData = JSON.parse(localStorage.getItem("feedback-form-state"))
+    // и тут тоже
     if (enteredData) {
         console.log(enteredData)
         Object.keys(enteredData).forEach(el => {
