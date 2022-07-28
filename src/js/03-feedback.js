@@ -1,5 +1,10 @@
 
 import { _ } from "lodash"
+import  {
+    saveToLocalStorage,
+    loadFromLocalStorage,
+    removeFromLocalStorage
+} from "./storage"
 
 lOCALSTORAGE_KEY = 'feedback-form-state'
 const form = document.querySelector('.feedback-form')
