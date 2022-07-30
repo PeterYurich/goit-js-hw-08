@@ -9,20 +9,16 @@ import  {
 lOCALSTORAGE_KEY = 'feedback-form-state'
 const form = document.querySelector('.feedback-form')
 
-function getEnteredData () {
-    return JSON.parse(localStorage.getItem(lOCALSTORAGE_KEY)) 
-}
-const enteredData = getEnteredData()
-// тут вызов функции работает (правда это единственный случай, где он работает)
+initForm()
+function initForm () {const enteredData = loadFromLocalStorage(lOCALSTORAGE_KEY)
 if (enteredData) {
     Object.entries(enteredData).forEach(([name, value]) => {
         form.elements[name].value = value
     })
-}
+}}
 
 const onTapping = (e) => {
-    let enteredData = JSON.parse(localStorage.getItem(lOCALSTORAGE_KEY))
-    // а тут вызов функции  getEnteredData не работает
+    let enteredData = loadFromLocalStorage(lOCALSTORAGE_KEY)
     enteredData = enteredData ? enteredData : {}
     enteredData[e.target.name] = e.target.value
     localStorage.setItem(lOCALSTORAGE_KEY, JSON.stringify(enteredData))
@@ -31,8 +27,7 @@ form.addEventListener('input', _.throttle(onTapping, 500))
 
 form.addEventListener('submit', e => {
     e.preventDefault();
-    const enteredData = JSON.parse(localStorage.getItem(lOCALSTORAGE_KEY))
-    // и тут тоже
+    const enteredData = loadFromLocalStorage(lOCALSTORAGE_KEY)
     if (enteredData) {
         console.log(enteredData)
         Object.keys(enteredData).forEach(el => {

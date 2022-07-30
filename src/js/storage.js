@@ -24,7 +24,7 @@ const removeFromLocalStorage = key => {
     localStorage.removeItem(key);
 }
 
-export default {
+export {
     saveToLocalStorage,
     loadFromLocalStorage,
     removeFromLocalStorage
