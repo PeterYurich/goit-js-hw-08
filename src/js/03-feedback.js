@@ -6,7 +6,7 @@ import  {
     removeFromLocalStorage
 } from "./storage"
 
-lOCALSTORAGE_KEY = 'feedback-form-state'
+const lOCALSTORAGE_KEY = 'feedback-form-state'
 const form = document.querySelector('.feedback-form')
 
 initForm()
